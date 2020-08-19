@@ -1,7 +1,7 @@
 # nrf24-multipro integrated with payne_rc
 nRF24L01 multi-protocol RC transmitter
 
-![radio](http://photo.5imxbbs.com/forum/202008/19/200636p7ok8e3odemeqnnp.jpg)
+[see the transmitter](http://photo.5imxbbs.com/forum/202008/19/200636p7ok8e3odemeqnnp.jpg)
 ## Binding Procedure
 - Power up quad or receiver.
 - While holding the appropriate stick pattern listed below, power up the tranmitter. ( that means protocol selected)
