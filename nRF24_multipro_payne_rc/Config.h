@@ -4,12 +4,12 @@
 #define ANA_MAX   1023
 
 
-#define DEBUG
+//#define DEBUG
 
 #define Tone_pin   8
 #define PPM_pin    9
 
-//#define BAT_ALART  //now only for atmel and for 1S Lipo 
+#define BAT_ALART  //now only for atmel and for 1S Lipo 
 #define BAT_PIN  A3
 
   #define   F1   6    

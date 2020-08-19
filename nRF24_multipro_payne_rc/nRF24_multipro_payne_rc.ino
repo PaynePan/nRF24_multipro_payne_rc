@@ -125,7 +125,6 @@ static uint16_t ppm[12] = {PPM_MIN, PPM_MIN, PPM_MIN, PPM_MIN, PPM_MID, PPM_MID,
 
 void setup()
 {
-  randomSeed((analogRead(A4) & 0x1F) | (analogRead(A5) << 5));
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, LOW); //start LED off
   pinMode(CS_pin, OUTPUT);
@@ -141,6 +140,8 @@ void setup()
   //frskyInit();
   set_txid(false);
   payne_rc_setup();
+  tone(Tone_pin, 1400, 80); 
+  delay(200); 
 }
 
 void payne_rc_setup() {
@@ -170,7 +171,6 @@ void payne_rc_setup() {
 
 #include "ppm_init.h"
 
-  tone(Tone_pin, 1400, 80);
 }
 
 void payne_rc_handle_special() {
