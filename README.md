@@ -1,6 +1,8 @@
 # nrf24-multipro integrated with payne_rc
 nRF24L01 multi-protocol RC transmitter
 
+![Screenshot](http://photo.5imxbbs.com/forum/202008/19/200636p7ok8e3odemeqnnp.jpg)  
+![Screenshot](http://photo.5imxbbs.com/forum/202008/19/200636zj1jjgu1h9n80j1w.jpg)  
 ## Binding Procedure
 - Power up quad or receiver.
 - While holding the appropriate stick pattern listed below, power up the tranmitter. ( that means protocol selected)
@@ -44,21 +46,21 @@ Last used protocol is automatically selected if stick is in neutral position ( t
 - Channel 8: holding F1 and F2 both, then presss down 4 btn
 
 #### Trim
-- Channel 1 £¨Aileron£©: use btn 3 or 4
-- Channel 2 £¨Elevator£©: use btn 1 or 2
-- Channel 3 £¨Throttle) : holding F1 , then press 1 or 2
-- Channel 4 £¨Rudder) :  holding F1 , then press 3 or 4
+- Channel 1 Aileron: use btn 3 or 4
+- Channel 2 Elevator: use btn 1 or 2
+- Channel 3 Throttle : holding F1 , then press 1 or 2
+- Channel 4 Rudder :  holding F1 , then press 3 or 4
 
 #### Channel reverse
-- Channel 1 £¨Aileron£©: holding F1 , then press 1
-- Channel 2 £¨Elevator£©: holding F1 , then press 2
-- Channel 3 £¨Throttle) :  to avoid confuse, not support reverse
-- Channel 4 £¨Rudder) :  holding F1 , then press 4
+- Channel 1 Aileron: holding F1 , then press 1
+- Channel 2 Elevator: holding F1 , then press 2
+- Channel 3 Throttle :  to avoid confusion, not support reverse
+- Channel 4 Rudder :  holding F1 , then press 4
 
 #### Channel precent
-- Channel 1£¨Aileron£©: move Stick of Aileron to 70% position (left or right is the same) , then press both F1 and F2 down. then range is reduce to 70%
-- Channel 2 £¨Elevator£©: just like Channel 1
-- Channel 4 £¨Rudder) : just like Channel 1 
+- Channel 1 Aileron: move Stick of Aileron to 70% position (left or right is the same) , then press both F1 and F2 down. then range is reduce to 70%
+- Channel 2 Elevator: just like Channel 1
+- Channel 4 Rudder : just like Channel 1 
 
 #### Channel Setting Reset (trim, reverse, precent)
 Let Throttle stick up, after that, holding F1 and F2 both, then press 1. a beep will inform that reset is done.
