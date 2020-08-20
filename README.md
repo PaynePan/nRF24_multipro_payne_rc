@@ -75,9 +75,9 @@ Download from git  and open prj in Arduino IDE
 Chose "Board: Arduino Pro or Pro mini (5v 16M)" to compile
 upload firmware via ICSP port ( uspasp programmer needed)
 Optional£º
-upload bootloader via ICSP, then firmware can be uploaded via serial port (an usb-ttl with DTR pin needed,  VCC must less than 3.6V)
+upload bootloader via ICSP, then firmware can be uploaded via serial port (an usb-ttl with DTR pin needed,  most of usb-ttl won't provide 3.3v, then connect to the 5V on the right of the board )
 
-[ICSP and Serial Port](http://photo.5imxbbs.com/forum/202008/20/091018xdfaujojfzo3833l.jpg)
+[ICSP and Serial Port](http://photo.5imxbbs.com/forum/202008/20/124136gyzzhd4ocyidshpd.jpg)
 
 
 
