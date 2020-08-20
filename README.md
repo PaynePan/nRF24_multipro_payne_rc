@@ -3,11 +3,10 @@ nRF24L01 multi-protocol RC transmitter
 
 [see the transmitter](https://www.moz8.com/data/attachment/forum/202008/19/215018ktpsusv6u6uu36k1.jpg)
 [see the channel order](http://photo.5imxbbs.com/forum/202008/19/200636p7ok8e3odemeqnnp.jpg)
-[see the schematics](http://photo.5imxbbs.com/forum/202008/19/200636zj1jjgu1h9n80j1w.jpg)
 
 ## Binding Procedure
 - Power up quad or receiver.
-- While holding the appropriate stick pattern listed below, power up the tranmitter. ( that means protocol selected)
+- While holding the appropriate stick pattern listed below, power up the tranmitter. ( that means protocol selected) (pls confirm the channel not set reversed)
 - Then move Throttle stick down ( enter binding) 
 - when bind done the radio will beep, watch to see if thequad/receiver is in the right status.
 
@@ -54,7 +53,7 @@ Last used protocol is automatically selected if stick is in neutral position ( t
 - Channel 4 Rudder :  holding F1 , then press 3 or 4
 
 #### Channel reverse
-- Channel 1 Aileron: holding F1 , then press 1
+- Channel 1 Aileron: holding F1 , then press 1   // high freq beep means reversed
 - Channel 2 Elevator: holding F1 , then press 2
 - Channel 3 Throttle :  to avoid confusion, not support reverse
 - Channel 4 Rudder :  holding F1 , then press 4
@@ -66,5 +65,19 @@ Last used protocol is automatically selected if stick is in neutral position ( t
 
 #### Channel Setting Reset (trim, reverse, precent)
 Let Throttle stick up, after that, holding F1 and F2 both, then press 1. a beep will inform that reset is done.
+
+#### hardware
+atmegal328p + nrf24 with pa
+[schematics](http://photo.5imxbbs.com/forum/202008/20/091810siyx6d2a0nu2ssyz.jpg)
+
+#### to develop
+Download from git  and open prj in Arduino IDE
+Chose "Board: Arduino Pro or Pro mini (5v 16M)" to compile
+upload firmware via ICSP port ( uspasp programmer needed)
+Optional£º
+upload bootloader via ICSP, then firmware can be uploaded via serial port (an usb-ttl with DTR pin needed)
+
+[ICSP and Serial Port](http://photo.5imxbbs.com/forum/202008/20/091018xdfaujojfzo3833l.jpg)
+
 
 

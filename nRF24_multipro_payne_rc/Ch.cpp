@@ -30,7 +30,11 @@ void Ch::setReversed(bool b) {
 
 void Ch::toggleReversed() {
   data->reversed = !data->reversed;
-  tone(Tone_pin,2500,40);
+  if  (data->reversed) {
+   tone(Tone_pin,2700,40);
+  } else {
+    tone(Tone_pin,2300,40);
+  }
   settings.refreshUpdateTime();
 }
 void Ch::setPercent(uint8_t v) { 
