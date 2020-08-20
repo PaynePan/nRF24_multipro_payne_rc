@@ -74,6 +74,7 @@ atmegal328p + nrf24 with pa
 Download from git  and open prj in Arduino IDE
 Chose "Board: Arduino Pro or Pro mini (5v 16M)" to compile
 upload firmware via ICSP port ( uspasp programmer needed)
+LOW Fuse Bit set as 0xFF to use external 16M Clock
 Optional£º
 upload bootloader via ICSP, then firmware can be uploaded via serial port (an usb-ttl with DTR pin needed,  most of usb-ttl won't provide 3.3v, then connect to the 5V on the right of the board )
 
