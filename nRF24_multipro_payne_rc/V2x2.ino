@@ -102,7 +102,7 @@ void V2x2_init()
 
 void V2x2_bind()
 {
-    uint16_t counter=1000;
+    uint16_t counter=400;
     while(counter--) {
         V2x2_send_packet(1); 
         digitalWrite(ledPin, bitRead(counter,3)); //check for 0bxxxx1xxx to flash LED
@@ -235,4 +235,3 @@ void V2x2_send_packet(uint8_t bind)
     NRF24L01_WritePayload(packet, V2x2_PAYLOADSIZE);
     delayMicroseconds(15);
 }
-
