@@ -27,6 +27,15 @@
 #include <avr/eeprom.h>
 #include <SPI.h>
 
+#define PPM_MIN 1000
+#define PPM_SAFE_THROTTLE 1050
+#define PPM_MID 1500
+#define PPM_MAX 2000
+#define PPM_MIN_COMMAND 1300
+#define PPM_MAX_COMMAND 1700
+#define GET_FLAG(ch, mask) (ppm[ch] > PPM_MAX_COMMAND ? mask : 0)
+#define GET_FLAG_INV(ch, mask) (ppm[ch] < PPM_MIN_COMMAND ? mask : 0)
+
 #define PPM_FrLen 22500  //set the PPM frame length in microseconds (1ms = 1000μs)
 #define PPM_PulseLen 300  //set the pulse length
 
@@ -66,14 +75,7 @@ enum chan_order {
   AUX8,  // (CH12) Reset / Rebind
 };
 
-#define PPM_MIN 1000
-#define PPM_SAFE_THROTTLE 1050
-#define PPM_MID 1500
-#define PPM_MAX 2000
-#define PPM_MIN_COMMAND 1300
-#define PPM_MAX_COMMAND 1700
-#define GET_FLAG(ch, mask) (ppm[ch] > PPM_MAX_COMMAND ? mask : 0)
-#define GET_FLAG_INV(ch, mask) (ppm[ch] < PPM_MIN_COMMAND ? mask : 0)
+
 
 // supported protocols
 enum {
@@ -162,6 +164,10 @@ void payne_rc_setup() {
   for (int i = 1; i <= CHAN_SIZE; i++) {
     chs[i]->bind(settings.getChData(i));
   }
+  for (int i = 4; i <= CHAN_SIZE; i++) {
+    chs[i]->setRawValue(PWM_MIN);
+  }
+
 
   Control *c;
 #include "pins_atmel.h"

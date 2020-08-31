@@ -29,8 +29,14 @@ enum {
 };
 u8 mjx_format;
 
+/*
 #define MJX_CHANNEL_LED         AUX1
 #define MJX_CHANNEL_FLIP        AUX2
+*/ 
+// in accordance with DIY-Multiprotocol-TX-Module
+#define MJX_CHANNEL_LED         AUX2 
+#define MJX_CHANNEL_FLIP        AUX1
+
 #define MJX_CHANNEL_PICTURE     AUX3
 #define MJX_CHANNEL_VIDEO       AUX4
 #define MJX_CHANNEL_HEADLESS    AUX5
@@ -110,7 +116,8 @@ void mjx_send_packet(u8 bind)
     packet[0] = map(ppm[THROTTLE], PPM_MIN, PPM_MAX, 0, 255);
     packet[1] = mjx_convert_channel(RUDDER);          // rudder
     packet[4] = 0x40;         // rudder does not work well with dyntrim
-    packet[2] = mjx_convert_channel(ELEVATOR);   // elevator
+    //packet[2] = mjx_convert_channel(ELEVATOR);   // elevator
+    packet[2] = 0x80 ^ mjx_convert_channel(ELEVATOR); // revert in accordance with DIY-Multiprotocol-TX-Module
     // driven trims cause issues when headless is enabled
     packet[5] = GET_FLAG(MJX_CHANNEL_HEADLESS, 1) ? 0x40 : CHAN2TRIM(packet[2]); // trim elevator
     packet[3] = mjx_convert_channel(AILERON);          // aileron

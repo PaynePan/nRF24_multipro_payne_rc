@@ -102,7 +102,7 @@ void V2x2_init()
 
 void V2x2_bind()
 {
-    uint16_t counter=400;
+    uint16_t counter=300;
     while(counter--) {
         V2x2_send_packet(1); 
         digitalWrite(ledPin, bitRead(counter,3)); //check for 0bxxxx1xxx to flash LED
@@ -147,6 +147,7 @@ void V2x2_add_pkt_checksum()
 void V2x2_set_flags(uint16_t* flags)
 {
     int num_channels = CHANNELS;
+    /*
     // Channel 5
     if (ppm[AUX1] <= PPM_MID) *flags &= ~V2x2_FLAG_LED;
     else *flags |= V2x2_FLAG_LED;
@@ -154,6 +155,14 @@ void V2x2_set_flags(uint16_t* flags)
     // Channel 6
     if (ppm[AUX2] <= PPM_MID) *flags &= ~V2x2_FLAG_FLIP;
     else *flags |= V2x2_FLAG_FLIP;
+    */
+    // in accordance with DIY-Multiprotocol-TX-Module
+    if (ppm[AUX1] <= PPM_MID) *flags &= ~V2x2_FLAG_FLIP;
+    else *flags |= V2x2_FLAG_FLIP;
+    
+    // Channel 6
+    if (ppm[AUX2] <= PPM_MID) *flags &= ~V2x2_FLAG_LED;
+    else *flags |= V2x2_FLAG_LED;
 
     // Channel 7
     if (num_channels < 7 || ppm[AUX3] <= PPM_MID) *flags &= ~V2x2_FLAG_CAMERA;

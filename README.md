@@ -76,7 +76,7 @@ atmegal328p + nrf24 with pa
 - upload firmware via ICSP port (a uspasp programmer needed)
 - LOW Fuse Bit set as 0xFF to use external 16M Clock
 ##### Optional
-- upload bootloader via ICSP, then firmware can be uploaded via serial port (an usb-ttl with DTR pin needed,  most of usb-ttl won't provide 3.3v, then connect to the 5V on the right of the board)
+- upload bootloader via ICSP, then firmware can be uploaded via serial port (an usb-ttl with DTR pin needed,  most of usb-ttl won't provide 3.3v, then connect to the 5V on the right of the board and open power when upload firmware)
 
 [ICSP and Serial Port](http://photo.5imxbbs.com/forum/202008/20/124136gyzzhd4ocyidshpd.jpg)
 
