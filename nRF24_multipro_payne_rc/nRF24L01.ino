@@ -135,15 +135,11 @@ void NRF24L01_SetTxRxMode(enum TXRX_State mode)
 uint8_t NRF24L01_Reset()
 {
 
-    Serial.println("a");
     NRF24L01_FlushTx();
     NRF24L01_FlushRx();
-    Serial.println("b");
     uint8_t status1 = Strobe(0xFF); // NOP
     uint8_t status2 = NRF24L01_ReadReg(0x07);
-    Serial.println("c");
     NRF24L01_SetTxRxMode(TXRX_OFF);
-    Serial.println("d");
     return (status1 == status2 && (status1 & 0x0f) == 0x0e);
 
 }

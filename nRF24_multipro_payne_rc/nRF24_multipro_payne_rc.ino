@@ -322,11 +322,11 @@ void selectProtocol()
   if (ppm[RUDDER] < PPM_MIN_COMMAND && ppm[AILERON] < PPM_MIN_COMMAND) // rudder left + aileron left
     current_protocol = PROTO_BAYANG_SILVERWARE; // Bayang protocol for Silverware with frsky telemetry
 
-  else if (ppm[RUDDER] < PPM_MIN_COMMAND)  // Rudder left
+  else if (ppm[RUDDER] < PPM_MIN_COMMAND) { // Rudder left
     set_txid(true);                      // Renew Transmitter ID
-
-  // Rudder right + Aileron right + Elevator down
-  else if (ppm[RUDDER] > PPM_MAX_COMMAND && ppm[AILERON] > PPM_MAX_COMMAND && ppm[ELEVATOR] < PPM_MIN_COMMAND)
+    current_protocol = constrain(EEPROM.read(ee_PROTOCOL_ID), 0, PROTO_END - 1);
+  } else if (ppm[RUDDER] > PPM_MAX_COMMAND && ppm[AILERON] > PPM_MAX_COMMAND && ppm[ELEVATOR] < PPM_MIN_COMMAND)
+    // Rudder right + Aileron right + Elevator down
     current_protocol = PROTO_E010; // EAchine E010, NiHui NH-010, JJRC H36 mini
 
   // Rudder right + Aileron right + Elevator up
