@@ -164,7 +164,7 @@ void payne_rc_setup() {
   for (int i = 1; i <= CHAN_SIZE; i++) {
     chs[i]->bind(settings.getChData(i));
   }
-  for (int i = 4; i <= CHAN_SIZE; i++) {
+  for (int i = 5; i <= CHAN_SIZE; i++) {
     chs[i]->setRawValue(PWM_MIN);
   }
 
